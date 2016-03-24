@@ -1,0 +1,23 @@
+{
+  "name": "diteral",
+  "version": "0.0.1",
+  "description": "DOM Literals",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/snapwich/diteral"
+  },
+  "keywords": [
+    "DOM",
+    "Literals"
+  ],
+  "author": "Rich Snapp <rich.snapp@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/snapwich/diteral/issues"
+  },
+  "homepage": "https://github.com/snapwich/diteral"
+}
