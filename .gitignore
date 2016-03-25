@@ -1,0 +1,8 @@
+.DS_Store
+bower_components/
+node_modules/
+build/
+dist/
+.idea/
+npm-debug.log
+tmp/config.json
