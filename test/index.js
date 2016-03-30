@@ -1,14 +1,26 @@
 
 import { diteral as d } from "../lib";
 
-var dom = d(
-    [
-        "div", {
-            className: "test",
-            onclick: function(ev) { console.log(this, ev) }
-        },
-        "content"
-    ]
-);
+var items = [];
 
-document.body.appendChild(dom);
+var dom = d(
+    ["div", {
+        className: "test"
+    },
+        ["button", {
+            onclick: () => {
+                items.push([
+                    "p", "a new item!"
+                ]);
+                dom(items);
+            }
+        },
+            "add item!"
+        ],
+        () => {
+            return items;
+        }
+    ]
+)(document.body);
+
+dom(items);
