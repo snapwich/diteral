@@ -1,26 +1,26 @@
 
 import { diteral as d } from "../lib";
 
-var items = [];
+let onClick = d.state((state, update) => {
+    return (ev) => {
+        if(!state.items) {
+            state.items = [];
+        }
+        state.items.push([
+            "p", "a new item!"
+        ]);
+        update();
+    }
+});
+
+let getItems = d.state(( state ) => {
+    return state.items;
+});
 
 var dom = d(
-    ["div", {
-        className: "test"
-    },
-        ["button", {
-            onclick: () => {
-                items.push([
-                    "p", "a new item!"
-                ]);
-                dom(items);
-            }
-        },
+    "div", {className: "test"},
+        ["button", {onclick: onClick},
             "add item!"
         ],
-        () => {
-            return items;
-        }
-    ]
-)(document.body);
-
-dom(items);
+    getItems
+)(document.body)();
